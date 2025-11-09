@@ -1,0 +1,44 @@
+.container {
+    max-width: 1200px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.chart-container {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.chart-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.download-link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    padding: 10px 25px;
+}
+
+.alert {
+    margin-bottom: 20px;
+}

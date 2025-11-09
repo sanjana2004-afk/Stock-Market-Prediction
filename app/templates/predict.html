@@ -1,0 +1,40 @@
+<!-- templates/predict.html -->
+{% extends "base.html" %}
+{% block title %}Predict{% endblock %}
+
+{% block content %}
+<h1 class="text-center mb-4">Stock Trend Prediction</h1>
+
+<div class="alert alert-danger d-none" id="error-message"></div>
+
+<form id="prediction-form" class="mb-4" method="POST" action="/predict">
+    <div class="mb-3">
+        <label for="stock" class="form-label">Enter Stock Ticker:</label>
+        <input type="text" class="form-control" id="stock" name="stock" value="POWERGRID.NS" required>
+        <div class="form-text">Example: AAPL for Apple Inc., MSFT for Microsoft</div>
+    </div>
+    <button type="submit" class="btn btn-primary" id="submit-btn">
+        Predict
+    </button>
+</form>
+
+{% if plot_path_prediction %}
+<div id="results">
+    <h3>Closing Price vs Time (20 & 50 Days EMA)</h3>
+    <img src="{{ plot_path_ema_20_50 }}" class="img-fluid" alt="EMA 20 & 50">
+
+    <h3>Closing Price vs Time (100 & 200 Days EMA)</h3>
+    <img src="{{ plot_path_ema_100_200 }}" class="img-fluid" alt="EMA 100 & 200">
+
+    <h3>Prediction vs Original Trend</h3>
+    <img src="{{ plot_path_prediction }}" class="img-fluid" alt="Prediction vs Original">
+
+    <h3>Data Summary</h3>
+    <div class="table-responsive">
+        {{ data_desc | safe }}
+    </div>
+
+    <a id="download-btn" class="btn btn-success mt-3" href="/download/{{ dataset_link }}">Download Dataset (CSV)</a>
+</div>
+{% endif %}
+{% endblock %}

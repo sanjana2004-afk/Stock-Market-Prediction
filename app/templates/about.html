@@ -1,0 +1,15 @@
+<!-- templates/about.html -->
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<h2>About This Project</h2>
+<p>This project is a stock trend prediction web application built using Flask, Keras (for the LSTM model), and Yahoo Finance data (via `yfinance`).</p>
+<ul>
+    <li>It fetches historical stock data</li>
+    <li>Calculates EMAs (Exponential Moving Averages)</li>
+    <li>Uses a deep learning model to forecast future prices</li>
+    <li>Visualizes predictions vs actual prices</li>
+</ul>
+<p>You can input any stock ticker (e.g., AAPL, MSFT, TATASTEEL.NS) and view its trend predictions and charts.</p>
+{% endblock %}

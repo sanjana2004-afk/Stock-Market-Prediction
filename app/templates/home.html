@@ -1,0 +1,11 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Welcome to Stock Trend Predictor</h1>
+<p class="text-center">Use this app to view past stock trends and forecast prices using deep learning.</p>
+<div class="text-center">
+    <a class="btn btn-primary mt-3" href="{{ url_for('predict_page') }}">Start Predicting</a>
+</div>
+{% endblock %}
